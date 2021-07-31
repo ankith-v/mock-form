@@ -1,17 +1,16 @@
-import InputCard from "./InputCard";
 import { Flex, Button } from "@chakra-ui/react";
 import { Formik, Form, Field } from "formik";
-import { FormErrorMessage } from "@chakra-ui/form-control";
-import { Box, Input, FormControl, FormLabel } from "@chakra-ui/react";
+import axios from "axios";
+import { Box, Input } from "@chakra-ui/react";
+
+//Enter url of choice that accepts JSON post below
+const url = "https://xyz.com";
 
 const Body = () => {
-  function validateInput(value) {
-    let error;
-    if (!value) {
-      error = "This is a required question";
-    }
-    return error;
-  }
+  const handleSubmit = (values) => {
+    console.log(values);
+    axios.post(url, values).then((response) => console.log(response));
+  };
 
   return (
     <>
@@ -49,7 +48,6 @@ const Body = () => {
                   type="input"
                   placeholder="Your Answer"
                   as={Input}
-                  validate={validateInput}
                 />
               </Box>
               <Box
@@ -146,9 +144,11 @@ const Body = () => {
                 maxHeight="8"
                 margin="3"
                 type="submit"
+                onSubmit={handleSubmit(values)}
               >
                 Submit
               </Button>
+              <pre> On submit, below JSON will be submitted to xyz.com</pre>
               <pre>{JSON.stringify(values, null, 2)}</pre>
             </Form>
           )}
