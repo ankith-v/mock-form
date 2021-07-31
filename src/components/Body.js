@@ -171,7 +171,11 @@ const Body = () => {
               >
                 Submit
               </Button>
-              <p> On submit, below JSON will be submitted to xyz.com</p>
+              <p>
+                {" "}
+                On submit, below JSON will be submitted to xyz.com via POST
+                method
+              </p>
               <pre>{JSON.stringify(values, null, 2)}</pre>
               <p>
                 Find the source code at :{" "}
