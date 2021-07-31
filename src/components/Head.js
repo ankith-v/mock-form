@@ -1,19 +1,21 @@
-import { Image, Flex, Text, Box } from "@chakra-ui/react";
+import { Flex, Text, Box, Image } from "@chakra-ui/react";
 
 const Head = () => {
   return (
     <div>
       <Box padding="3" alignContent="center">
-        <Flex flexDirection="column" height="100%">
+        <Flex
+          flexDirection="column"
+          height="100%"
+          display="table"
+          margin="0 auto"
+          maxW="600"
+        >
           <Image
-            src="FundingXLogo.png"
+            src={process.env.PUBLIC_URL + "/FundingXLogo.png"}
             objectFit="contain"
             alt="logo"
-            maxInlineSize="600"
-            // borderStyle="solid"
-            // borderRadius="15"
-            // borderWidth="thin"
-            // borderColor="lightgray"
+            maxInlineSize="100%"
             paddingBottom="1"
             marginBottom="2"
           />

@@ -14,7 +14,7 @@ const Body = () => {
 
   return (
     <>
-      <Flex flexDirection="column" height="100%" alignContent="center">
+      <Flex flexDirection="column" height="100%" margin="0 auto" maxW="600">
         <Formik
           initialValues={{
             name: "",
@@ -32,7 +32,6 @@ const Body = () => {
               <Box
                 borderStyle="solid"
                 borderColor="lightgrey"
-                maxW="600"
                 borderWidth="thin"
                 padding="8"
                 borderRadius="2xl"
@@ -53,7 +52,6 @@ const Body = () => {
               <Box
                 borderStyle="solid"
                 borderColor="lightgrey"
-                maxW="600"
                 borderWidth="thin"
                 padding="8"
                 borderRadius="2xl"
@@ -74,7 +72,6 @@ const Body = () => {
               <Box
                 borderStyle="solid"
                 borderColor="lightgrey"
-                maxW="600"
                 borderWidth="thin"
                 padding="8"
                 borderRadius="2xl"
@@ -95,7 +92,6 @@ const Body = () => {
               <Box
                 borderStyle="solid"
                 borderColor="lightgrey"
-                maxW="600"
                 borderWidth="thin"
                 padding="8"
                 borderRadius="2xl"
@@ -116,7 +112,6 @@ const Body = () => {
               <Box
                 borderStyle="solid"
                 borderColor="lightgrey"
-                maxW="600"
                 borderWidth="thin"
                 padding="8"
                 borderRadius="2xl"
@@ -148,14 +143,17 @@ const Body = () => {
               >
                 Submit
               </Button>
-              <pre> On submit, below JSON will be submitted to xyz.com</pre>
+              <p> On submit, below JSON will be submitted to xyz.com</p>
               <pre>{JSON.stringify(values, null, 2)}</pre>
-              <pre>
+              <p>
                 Find the source code at :{" "}
-                <a href="https://github.com/ankith-v/mock-form">
+                <a
+                  href="https://github.com/ankith-v/mock-form"
+                  style={{ color: "blue" }}
+                >
                   https://github.com/ankith-v/mock-form
                 </a>
-              </pre>
+              </p>
             </Form>
           )}
         </Formik>
