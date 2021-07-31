@@ -151,7 +151,10 @@ const Body = () => {
               <pre> On submit, below JSON will be submitted to xyz.com</pre>
               <pre>{JSON.stringify(values, null, 2)}</pre>
               <pre>
-                Find the source code at : https://github.com/ankith-v/mock-form
+                Find the source code at :{" "}
+                <a href="https://github.com/ankith-v/mock-form">
+                  https://github.com/ankith-v/mock-form
+                </a>
               </pre>
             </Form>
           )}
