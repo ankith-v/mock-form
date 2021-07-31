@@ -12,6 +12,14 @@ const Body = () => {
     axios.post(url, values).then((response) => console.log(response));
   };
 
+  function validateInput(value) {
+    let error;
+    if (!value) {
+      error = "Field is required";
+    }
+    return error;
+  }
+
   return (
     <>
       <Flex flexDirection="column" height="100%" margin="0 auto" maxW="600">
@@ -27,7 +35,7 @@ const Body = () => {
             console.log(data);
           }}
         >
-          {({ values }) => (
+          {({ values, errors, touched, isValidating }) => (
             <Form>
               <Box
                 borderStyle="solid"
@@ -47,7 +55,11 @@ const Body = () => {
                   type="input"
                   placeholder="Your Answer"
                   as={Input}
+                  validate={validateInput}
                 />
+                {errors.name && touched.name && (
+                  <div style={{ color: "red" }}>{errors.name}</div>
+                )}
               </Box>
               <Box
                 borderStyle="solid"
@@ -67,7 +79,11 @@ const Body = () => {
                   type="input"
                   placeholder="Your Answer"
                   as={Input}
+                  validate={validateInput}
                 />
+                {errors.email && touched.email && (
+                  <div style={{ color: "red" }}>{errors.email}</div>
+                )}
               </Box>
               <Box
                 borderStyle="solid"
@@ -87,7 +103,11 @@ const Body = () => {
                   type="input"
                   placeholder="Your Answer"
                   as={Input}
+                  validate={validateInput}
                 />
+                {errors.phone && touched.phone && (
+                  <div style={{ color: "red" }}>{errors.phone}</div>
+                )}
               </Box>
               <Box
                 borderStyle="solid"
@@ -107,7 +127,11 @@ const Body = () => {
                   type="input"
                   placeholder="Your Answer"
                   as={Input}
+                  validate={validateInput}
                 />
+                {errors.pageURL && touched.pageURL && (
+                  <div style={{ color: "red" }}>{errors.pageURL}</div>
+                )}
               </Box>
               <Box
                 borderStyle="solid"
@@ -130,7 +154,11 @@ const Body = () => {
                   type="input"
                   placeholder="Your Answer"
                   as={Input}
+                  validate={validateInput}
                 />
+                {errors.about && touched.about && (
+                  <div style={{ color: "red" }}>{errors.about}</div>
+                )}
               </Box>
               <Button
                 colorScheme="red"
