@@ -2,7 +2,7 @@
   "name": "form-clone",
   "version": "0.1.0",
   "private": true,
-  
+  "homepage": "https://ankith-v.github.io/mock-form",
   "dependencies": {
     "@chakra-ui/react": "^1.6.5",
     "@emotion/react": "11",
